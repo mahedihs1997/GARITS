@@ -1,0 +1,2279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="ap" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.foremanControlller">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="250.0" maxWidth="950.0" prefHeight="50.0" prefWidth="950.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label fx:id="dateTime_lb" text="29/03/2019 12:46" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#minimize_stage" prefHeight="30.0" prefWidth="30.0" styleClass="min-btn" stylesheets="@style/style.css">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/mini.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#close_app" prefHeight="30.0" prefWidth="30.0" styleClass="close-btn" stylesheets="@style/style.css">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="GARITS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/avatar.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <Label fx:id="staffName" text="Name of user" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="staffPosition" text="Position" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#dashboard_open" prefHeight="40.0" prefWidth="254.0" styleClass="main-btn" stylesheets="@style/style.css" text="Dashboard">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#customerList_open" prefHeight="40.0" prefWidth="254.0" styleClass="main-btn" stylesheets="@style/style.css" text="Customer List">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#newCustomer_open" prefHeight="40.0" prefWidth="254.0" styleClass="main-btn" stylesheets="@style/style.css" text="New Customer">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/newUser.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#partsList_open" prefHeight="40.0" prefWidth="254.0" styleClass="main-btn" stylesheets="@style/style.css" text="Parts List">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/parts.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#jobsList_open" prefHeight="40.0" prefWidth="254.0" styleClass="main-btn" stylesheets="@style/style.css" text="Jobs List">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/jobList.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#newJob_Open" prefHeight="40.0" prefWidth="254.0" styleClass="main-btn" stylesheets="@style/style.css" text="New Job">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/newJob.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#sign_out" prefHeight="40.0" prefWidth="254.0" styleClass="main-btn" stylesheets="@style/style.css" text="Sign Out">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="TOP_CENTER" layoutX="200.0" layoutY="50.0" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #f4f4f4;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="620.0" prefWidth="970.0" style="-fx-background-color: #fff;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <TabPane fx:id="tabPane" prefHeight="624.0" prefWidth="970.0" stylesheets="@style/style.css" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Dashboard">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Dashboard" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_Dashboard" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" style="-fx-border-color: #707070;">
+                                                   <children>
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <HBox maxWidth="-Infinity" prefWidth="650.0">
+                                                               <children>
+                                                                  <ComboBox fx:id="SetMechanicJobNumber_Box" prefWidth="200.0" promptText="Pick Job Number" style="-fx-background-color: #fff; -fx-background-radius: 0; -fx-border-color: #707070;">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                     </HBox.margin>
+                                                                  </ComboBox>
+                                                                  <ComboBox fx:id="JobMehcanic_Box" prefWidth="200.0" promptText="Set Mechanic" style="-fx-background-color: #fff; -fx-background-radius: 0; -fx-border-color: #707070;">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                     </HBox.margin>
+                                                                  </ComboBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets right="50.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SetJobMechanic" prefHeight="30.0" prefWidth="200.0" styleClass="db-btn" stylesheets="@style/style.css" text="Set Mechanic">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Customer List">
+                        <content>
+                          <AnchorPane>
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Customer List" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_customerList" text="You must select a customer" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <children>
+                                                <TextField fx:id="searchList" onKeyTyped="#searchUsers" prefWidth="920.0" promptText="Search by: Username, Name, Password, Postion &amp; Hourly Rate" style="-fx-background-color: transparent; -fx-border-color: #707070;" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="401.0" prefWidth="920.0">
+                                             <children>
+                                                <TableView fx:id="table">
+                                                   <columns>
+                                                      <TableColumn fx:id="customerID_cl" prefWidth="75.0" text="Customer ID" />
+                                                      <TableColumn fx:id="name_cl" prefWidth="78.0" text="Name" />
+                                                      <TableColumn fx:id="contact_cl" minWidth="0.0" prefWidth="74.0" text="Contact" />
+                                                      <TableColumn fx:id="address_cl" minWidth="0.0" prefWidth="156.0" text="Address" />
+                                                      <TableColumn fx:id="city_cl" minWidth="0.0" prefWidth="74.0" text="City" />
+                                                      <TableColumn fx:id="country_cl" minWidth="0.0" prefWidth="57.0" text="Country" />
+                                                      <TableColumn fx:id="postcode_cl" minWidth="0.0" prefWidth="67.0" text="Postcode" />
+                                                      <TableColumn fx:id="dayPhone_cl" minWidth="0.0" prefWidth="85.0" text="Day Phone" />
+                                                      <TableColumn fx:id="mobilePhone_cl" minWidth="0.0" prefWidth="86.0" text="Mobile Phone" />
+                                                      <TableColumn fx:id="accountType_cl" minWidth="0.0" prefWidth="93.0" text="Account Type" />
+                                                      <TableColumn fx:id="lastMoT_cl" minWidth="0.0" prefWidth="72.0" text="Last MoT" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0" spacing="90.0">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteCustomerList" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Delete Selected Customer">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewCustomer" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="View Customer">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshList" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Refresh">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="New Customer">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Register New Customer:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_NewCustomer" text="You must select a user to remove!" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="401.0" prefWidth="850.0">
+                                             <VBox.margin>
+                                                <Insets bottom="25.0" top="25.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <HBox maxWidth="-Infinity" prefWidth="500.0">
+                                                   <children>
+                                                      <VBox spacing="25.0">
+                                                         <children>
+                                                            <Label text="Name" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Contact" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Address" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="City" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Country" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Postcode" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Day Phone" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Mobile Phone" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Account Type" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="50.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox spacing="15.0">
+                                                         <children>
+                                                            <TextField fx:id="name_field" prefHeight="30.0" prefWidth="300.0" promptText="Name" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="contact_field" prefHeight="30.0" prefWidth="300.0" promptText="Contact" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="address_field" prefHeight="30.0" prefWidth="300.0" promptText="Address" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="city_field" prefHeight="30.0" prefWidth="300.0" promptText="City" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="country_field" prefHeight="30.0" prefWidth="300.0" promptText="Country" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="postcode_field" prefHeight="30.0" prefWidth="300.0" promptText="Postcode" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="dayPhone_field" prefHeight="30.0" prefWidth="300.0" promptText="Day Phone" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="mobilePhone_field" prefHeight="30.0" prefWidth="300.0" promptText="Mobile Phone" style="-fx-background-radius: 0;" />
+                                                            <ComboBox fx:id="accountType_box" prefWidth="300.0" promptText="Please choose position" style="-fx-background-color: #fff; -fx-background-radius: 0; -fx-border-color: #707070;" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0" spacing="50.0">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#register_Customer" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Register New Customer">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Edit Customer">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Edit Customer:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_editCustomer" text="You must select a user to remove!" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0">
+                                             <children>
+                                                <HBox alignment="CENTER">
+                                                   <children>
+                                                      <VBox spacing="15.0">
+                                                         <children>
+                                                            <Label text="Name:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Contact:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Address:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="City:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Country:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Postcode:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Day Phone:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Mobile Phone:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Account Type:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" right="25.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox spacing="15.0">
+                                                         <children>
+                                                            <Label fx:id="nameLabel" text="Name" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="contactLabel" text="Contact" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="addressLabel" text="Address" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="cityLabel" text="City" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="countryLabel" text="Country" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="postcodeLabel" text="Postcode" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="dayPhoneLabel" text="Day Phone" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="mobilePhoneLabel" text="Mobile Phone" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="accountTypeLabel" text="Account Type" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="25.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox spacing="5.0">
+                                                         <children>
+                                                            <TextField fx:id="name_field1" prefHeight="30.0" prefWidth="300.0" promptText="Name" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="contact_field1" prefHeight="30.0" prefWidth="300.0" promptText="Contact" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="address_field1" prefHeight="30.0" prefWidth="300.0" promptText="Address" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="city_field1" prefHeight="30.0" prefWidth="300.0" promptText="City" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="country_field1" prefHeight="30.0" prefWidth="300.0" promptText="Country" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="postcode_field1" prefHeight="30.0" prefWidth="300.0" promptText="Postcode" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="dayPhone_field1" prefHeight="30.0" prefWidth="300.0" promptText="Day Phone" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="mobilePhone_field1" prefHeight="30.0" prefWidth="300.0" promptText="Mobile Phone" style="-fx-background-radius: 0;" />
+                                                            <ComboBox fx:id="accountType_box1" prefWidth="300.0" promptText="Please choose position" style="-fx-background-color: #fff; -fx-background-radius: 0; -fx-border-color: #707070;" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="850.0" spacing="50.0">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#edit_Customer" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Edit Customer">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#customerList_open" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Cancel">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="View Customer">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="View Customer:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_viewCustomer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="705.0" text="You must select a user to remove!" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="TOP_CENTER" maxHeight="550.0" maxWidth="-Infinity" prefWidth="920.0">
+                                             <children>
+                                                <HBox />
+                                                <HBox spacing="75.0">
+                                                   <children>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label text="Customer ID:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Name:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Contact:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Address:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="City:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label fx:id="customerIdLabel1" text="CO123" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="nameLabel1" text="Name" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="contactLabel1" text="Contact" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="addressLabel1" text="Address" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="cityLabel1" text="City" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label text="Country:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Postcode:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Day Phone:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Mobile Phone:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Account Type:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label fx:id="countryLabel1" text="Country" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="postcodeLabel1" text="Postcode" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="dayPhoneLabel1" text="Day Phone" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="mobilePhoneLabel1" text="Mobile Phone" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="accountTypeLabel1" text="Account Type" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER">
+                                                         <children>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editCustomer_open" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Edit Customer">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#remove_Vehicle" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Remove Vehicle">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#discount_open" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Add / Edit Discount">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="15.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <VBox prefHeight="150.0" prefWidth="500.0">
+                                                   <children>
+                                                      <TableView fx:id="vehicleTable" onMouseClicked="#vehicleEditFieldsSet">
+                                                         <columns>
+                                                            <TableColumn fx:id="RegNo_cl" prefWidth="176.0" text="Reg No" />
+                                                            <TableColumn fx:id="Make_cl" prefWidth="184.0" text="Make" />
+                                                            <TableColumn fx:id="Model_cl" minWidth="0.0" prefWidth="174.0" text="Model" />
+                                                            <TableColumn fx:id="colour_cl" minWidth="0.0" prefWidth="161.0" text="Colour" />
+                                                            <TableColumn fx:id="Years_cl" minWidth="0.0" prefWidth="151.0" text="Years" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="15.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                                <HBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" prefWidth="460.0" style="-fx-border-color: #707070;">
+                                                         <children>
+                                                            <TextField fx:id="RegNo_Field" promptText="Reg No" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Make_Field" promptText="Make" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Model_Field" promptText="Model" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Colour_Field" promptText="Colour" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Years_Field" promptText="Years" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add_Vehicle" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Add Vehicle">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefWidth="460.0" style="-fx-border-color: #707070;">
+                                                         <children>
+                                                            <TextField fx:id="RegNo_Field2" promptText="Reg No" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Make_Field2" promptText="Make" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Model_Field2" promptText="Model" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Colour_Field2" promptText="Colour" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="Years_Field2" promptText="Years" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#edit_Vehicle" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Edit Vehicle">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Parts List">
+                           <content>
+                              <AnchorPane>
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Parts List" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_partsList" text="You must select a part" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <children>
+                                                <TextField fx:id="searchPartList" onKeyTyped="#searchParts" prefWidth="920.0" promptText="Search by: Username, Name, Password, Postion &amp; Hourly Rate" style="-fx-background-color: transparent; -fx-border-color: #707070;" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="401.0" prefWidth="920.0">
+                                             <children>
+                                                <TableView fx:id="partsTable">
+                                                   <columns>
+                                                      <TableColumn fx:id="PartCode_cl" prefWidth="105.0" text="Part Code" />
+                                                      <TableColumn fx:id="PartName_cl" prefWidth="99.0" text="Name" />
+                                                      <TableColumn fx:id="Quantity_cl" prefWidth="116.0" text="Quantity" />
+                                                      <TableColumn fx:id="Price_cl" minWidth="0.0" prefWidth="77.0" text="Price" />
+                                                      <TableColumn fx:id="Manufacturer_cl" minWidth="0.0" prefWidth="183.0" text="Manufacturer" />
+                                                      <TableColumn fx:id="Description_cl" minWidth="0.0" prefWidth="116.0" text="Description" />
+                                                      <TableColumn fx:id="VehicleType_cl" minWidth="0.0" prefWidth="159.0" text="Vehicle Type" />
+                                                      <TableColumn fx:id="Threshold_cl" minWidth="0.0" prefWidth="63.0" text="Threshold" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0" spacing="90.0">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewParts_open" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="View / Edit / Add Part">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refresh_partList" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Refresh">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="View Part">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="View Part:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_ViewPart" maxWidth="-Infinity" prefWidth="750.0" text="You must select a user to remove!" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="401.0" prefWidth="920.0">
+                                             <children>
+                                                <HBox spacing="100.0">
+                                                   <children>
+                                                      <VBox>
+                                                         <children>
+                                                            <Label text="Code:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Name: " textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Quantity:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Price:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Manufacturer:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox>
+                                                         <children>
+                                                            <Label fx:id="PartCode_lb" text="CO123" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="PartName_lb" text="Name" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="PartQuantity_lb" text="Quantity" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="PartPrice_lb" text="£15" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="PartManufacturer_lb" text="Idk" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox>
+                                                         <children>
+                                                            <Label text="Description:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Vehicle Type:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Threshold:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox>
+                                                         <children>
+                                                            <Label fx:id="PartDescription_lb" text="Who" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="PartVehicle_lb" text="They" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="PartThreshold_lb" text="123" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="15.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="401.0" prefWidth="920.0" style="-fx-border-color: #707070;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                         <children>
+                                                            <TextField fx:id="PartName_field" promptText="Name" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartQuantity_field" promptText="Quantity" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartPrice_field" promptText="Price" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartManufacturer_field" promptText="Manufacturer" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartDescription_field" promptText="Description" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartVehicle_field" promptText="Vehicle Type" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartThreshold_field" promptText="Threshold" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updatePart" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Update Part">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="401.0" prefWidth="920.0" style="-fx-border-color: #707070;">
+                                                         <children>
+                                                            <TextField fx:id="PartName_field1" promptText="Name" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartQuantity_field1" promptText="Quantity" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartPrice_field1" promptText="Price" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartManufacturer_field1" promptText="Manufacturer" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartDescription_field1" promptText="Description" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartVehicle_field1" promptText="Vehicle Type" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <TextField fx:id="PartThreshold_field1" promptText="Threshold" style="-fx-background-radius: 0;">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </TextField>
+                                                            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewPart" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Add New Part">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Replenish Stock">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deletePart" prefHeight="30.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Delete Part">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0" spacing="50.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Jobs List">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Jobs List:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_jobList" text="You must select a job" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <children>
+                                                <TextField fx:id="searchJobList" onKeyTyped="#searchJobs" prefWidth="920.0" promptText="Search by: Username, Name, Password, Postion &amp; Hourly Rate" style="-fx-background-color: transparent; -fx-border-color: #707070;" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="401.0" prefWidth="920.0">
+                                             <children>
+                                                <TableView fx:id="jobsTable">
+                                                   <columns>
+                                                      <TableColumn fx:id="JobNumber_cl" prefWidth="92.0" text="Job Number" />
+                                                      <TableColumn fx:id="Customer_cl" minWidth="0.0" prefWidth="115.0" text="Customer Id" />
+                                                      <TableColumn fx:id="JobCustomerName_cl" prefWidth="149.0" text="Customer Name" />
+                                                      <TableColumn fx:id="Date_cl" prefWidth="84.0" text="Date" />
+                                                      <TableColumn fx:id="Vehicle_cl" minWidth="0.0" prefWidth="111.0" text="Vehicle" />
+                                                      <TableColumn fx:id="JobVehicleModel_cl" minWidth="0.0" prefWidth="100.0" text="Model" />
+                                                      <TableColumn fx:id="Status_cl" maxWidth="420.0" minWidth="0.0" text="Status" />
+                                                      <TableColumn fx:id="ServiceType_cl" maxWidth="420.0" minWidth="0.0" prefWidth="91.0" text="Service Type" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0" spacing="90.0">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewJob" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="View Job">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#RefreshJobList" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Refresh">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Pending Payment">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Pending Payments:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_PendingPaymentList" text="Pending payments info" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="920.0">
+                                             <children>
+                                                <TextField fx:id="searchPaymentList" onKeyTyped="#searchingPaymentList" prefWidth="920.0" promptText="Search by: Username, Name, Password, Postion &amp; Hourly Rate" style="-fx-background-color: transparent; -fx-border-color: #707070;" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="401.0" prefWidth="920.0">
+                                             <children>
+                                                <TableView fx:id="paymentsTable">
+                                                   <columns>
+                                                      <TableColumn fx:id="PendingCustomerID_cl" prefWidth="108.0" text="Customer Id" />
+                                                      <TableColumn fx:id="PendingCustomerName_cl" prefWidth="153.0" text="Customer Name" />
+                                                      <TableColumn fx:id="PendingJobNumber_cl" prefWidth="127.0" text="Job Number" />
+                                                      <TableColumn fx:id="PendingAmount_cl" minWidth="0.0" prefWidth="120.0" text="Amount" />
+                                                      <TableColumn fx:id="PendingDate_cl" maxWidth="439.0" minWidth="0.0" prefWidth="110.0" text="Date" />
+                                                      <TableColumn fx:id="PendingVehicleModel_cl" prefWidth="165.0" text="Vehicle Model" />
+                                                      <TableColumn fx:id="PendingJobStatus_cl" prefWidth="131.0" text="Status" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0" spacing="90.0">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Print ">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Pay">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshPaymentsTable" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Refresh">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="New Job">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="New Job:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="25.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="info_NewJob" text="You must select a user to remove!" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="401.0" prefWidth="850.0">
+                                             <VBox.margin>
+                                                <Insets bottom="25.0" top="25.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <HBox maxWidth="-Infinity" prefWidth="500.0">
+                                                   <children>
+                                                      <VBox prefWidth="250.0" spacing="20.0">
+                                                         <children>
+                                                            <Label text="Customer Id" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Customer Name" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label text="Vehicle" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Estimated Duration" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Date Booked" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Estimated Price" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Service Type" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Service Price" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="50.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox spacing="15.0">
+                                                         <children>
+                                                            <ComboBox fx:id="customerId_box" onAction="#addCustomerNameField" prefWidth="300.0" promptText="Select customer Id" style="-fx-background-color: #fff; -fx-background-radius: 0; -fx-border-color: #707070;" />
+                                                            <TextField fx:id="customerNameJob" prefHeight="30.0" prefWidth="300.0" promptText="Customer Name" style="-fx-background-radius: 0;" />
+                                                            <ComboBox fx:id="vehicleRegNo_box" prefWidth="300.0" promptText="Select vehicle" style="-fx-background-color: #fff; -fx-background-radius: 0; -fx-border-color: #707070;" />
+                                                            <TextField fx:id="estimatedDuration_field" prefHeight="30.0" prefWidth="300.0" promptText="Estimated Duration In Minutes" style="-fx-background-radius: 0;" />
+                                                            <DatePicker fx:id="dateBooked_picker" prefWidth="300.0" promptText="Date Booked" style="-fx-background-radius: 0;" />
+                                                            <TextField fx:id="estimatedPrice_field" prefHeight="30.0" prefWidth="300.0" promptText="Estimated Price" style="-fx-background-radius: 0;" />
+                                                            <ComboBox fx:id="serviceType_box" prefWidth="300.0" promptText="Select service type" style="-fx-background-color: #fff; -fx-background-radius: 0; -fx-border-color: #707070;" />
+                                                            <TextField fx:id="ServicePrice_field" prefHeight="30.0" prefWidth="300.0" promptText="Service Price" style="-fx-background-radius: 0;" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox maxWidth="-Infinity" prefWidth="500.0">
+                                                   <children>
+                                                      <VBox prefWidth="250.0" spacing="25.0">
+                                                         <children>
+                                                            <Label text="Task Description" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="50.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="116.0" prefWidth="301.0">
+                                                         <children>
+                                                            <TextArea fx:id="taskDescription_area" onKeyTyped="#changeCounterText" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 0;" />
+                                                            <HBox alignment="CENTER_RIGHT">
+                                                               <children>
+                                                                  <Label fx:id="TextAreaCounter" alignment="CENTER_RIGHT" prefWidth="16.0" style="-fx-text-fill: #707070;" text="0">
+                                                                     <font>
+                                                                        <Font size="9.0" />
+                                                                     </font>
+                                                                     <HBox.margin>
+                                                                        <Insets right="1.0" />
+                                                                     </HBox.margin>
+                                                                  </Label>
+                                                                  <Label style="-fx-text-fill: #707070;" text="/200">
+                                                                     <font>
+                                                                        <Font size="9.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox alignment="CENTER" maxWidth="-Infinity" prefWidth="920.0" spacing="50.0">
+                                             <children>
+                                                <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewJob" prefHeight="45.0" prefWidth="250.0" styleClass="db-btn" stylesheets="@style/style.css" text="Add New Job">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="View Job">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefWidth="970.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <HBox maxWidth="-Infinity" prefWidth="920.0">
+                                             <VBox.margin>
+                                                <Insets left="25.0" right="25.0" top="15.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label text="Job Number:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="JobNumberLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="83.0" text="9999001" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="98.0" text="Mechanic:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="MechanicLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="185.0" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="108.0" text="Total Time:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="ActualTimeLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="34.0" text="0" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="79.0" text="Minutes" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="91.0" text="Job Type:" textFill="#707070">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="JobType" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="97.0" text="MoT" textFill="#707070">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <VBox alignment="TOP_CENTER" maxHeight="550.0" maxWidth="-Infinity" prefWidth="920.0">
+                                             <children>
+                                                <HBox />
+                                                <HBox spacing="75.0">
+                                                   <children>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label text="Status: " textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Customer Name:" textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Vehicle Reg: " textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Make: " textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Model: " textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label fx:id="JobStatusLabel" text="Pending" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobCustomerNameLabel" text="Nice Name" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobVehicleRegLabel" text="AA556678" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobMakeLabel" text="Fjord" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobModelLabel" text="Aussie Boy" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label text="Date Booked: " textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label text="Address: " textFill="#707070">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label fx:id="JobDateLabel" text="2014-03-05" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobAddressLabel" text="77 Goddam St" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" left="3.0" right="3.0" top="3.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobCityLabel" text="London" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" left="3.0" right="3.0" top="1.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobCountryLabel" text="England" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" left="3.0" right="3.0" top="1.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                            <Label fx:id="JobPostcodeLabel" text="E1 2HK" textFill="#707070">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" left="3.0" right="3.0" top="1.0" />
+                                                               </VBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="15.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <VBox prefWidth="500.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="15.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <HBox>
+                                                         <children>
+                                                            <Label style="-fx-text-fill: #707070;" text="Estimated Time">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="EstimatedTimeLabel" style="-fx-text-fill: #707070;" text="4">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets left="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                            <Label style="-fx-text-fill: #707070;" text="Minutes">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets left="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <ScrollPane prefHeight="100.0" prefWidth="920.0">
+                                                         <content>
+                                                            <Label fx:id="workRequiredLabel" alignment="TOP_LEFT" maxWidth="905.0" prefHeight="100.0" style="-fx-text-fill: #707070;" text="Work Required : Estimated Time awddddddddddddd swwwww wwwwwwwwwwww wwwwwwwccc ccccccccccc ccccccw wwwwwwwww wwwwwwwwwwwwww wwwwwwwwwwww wwwwww ">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </content>
+                                                      </ScrollPane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="120.0" prefWidth="500.0">
+                                                   <children>
+                                                      <TableView fx:id="JobTasksTable" onMouseClicked="#vehicleEditFieldsSet">
+                                                         <columns>
+                                                            <TableColumn fx:id="TaskName_cl" prefWidth="354.0" text="Task Name" />
+                                                            <TableColumn fx:id="TaskDuration_cl" prefWidth="245.0" text="Duration (Minutes)" />
+                                                            <TableColumn fx:id="TaskMechanic_cl" prefWidth="245.0" text="Mechanic" />
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="15.0" />
+                                                   </VBox.margin>
+                                                </VBox>
+                                                <VBox prefHeight="120.0" prefWidth="500.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT">
+                                                         <children>
+                                                            <TableView fx:id="JobPartsTable" onMouseClicked="#vehicleEditFieldsSet">
+                                                               <columns>
+                                                                  <TableColumn fx:id="JobPartName_cl" prefWidth="112.0" text="Part Name" />
+                                                                  <TableColumn fx:id="JobQuantity_cl" prefWidth="110.0" text="Quantity" />
+                                                                  <TableColumn fx:id="JobPrice_cl" minWidth="0.0" prefWidth="96.0" text="Price (£)" />
+                                                               </columns>
+                                                            </TableView>
+                                                            <VBox alignment="CENTER">
+                                                               <children>
+                                                                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AddPartsToJob" prefHeight="35.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Add Parts">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                               <HBox.margin>
+                                                                  <Insets left="30.0" right="20.0" />
+                                                               </HBox.margin>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER">
+                                                               <children>
+                                                                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AddWorkToJob" prefHeight="35.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Add Work">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Button>
+                                                                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Pay" prefHeight="35.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Pay">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                               <HBox.margin>
+                                                                  <Insets left="30.0" right="20.0" />
+                                                               </HBox.margin>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER">
+                                                               <children>
+                                                                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#completeJob" prefHeight="35.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Complete">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Button>
+                                                                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ProduceJobInvoice" prefHeight="35.0" prefWidth="150.0" styleClass="db-btn" stylesheets="@style/style.css" text="Produce Invoice">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="14.0" />
+                                                                     </font>
+                                                                     <VBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </VBox.margin>
+                                                                  </Button>
+                                                               </children>
+                                                               <HBox.margin>
+                                                                  <Insets left="20.0" />
+                                                               </HBox.margin>
+                                                            </VBox>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" top="15.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
